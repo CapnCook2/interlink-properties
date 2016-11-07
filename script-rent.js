@@ -11,7 +11,7 @@ function currency(x) {
 }
 
 function filter(data) {
-	if(filters.name && !data.name.toLowerCase().indexOf(filters.name.toLowerCase())>-1)
+	if(filters.name && data.name.toLowerCase().indexOf(filters.name.toLowerCase())<=-1)
 		return false;
 	if(filters.minRent && Number(filters.minRent)>Number(data.rent))
 		return false;
@@ -21,7 +21,7 @@ function filter(data) {
 		return false;
 	if(filters.bhk && (filters.bhk != "Any" && data.bhk != filters.bhk))
 		return false;
-	if(filters.address && !data.address.toLowerCase().indexOf(filters.address.toLowerCase())>-1)
+	if(filters.address && data.address.toLowerCase().indexOf(filters.address.toLowerCase())<=-1)
 		return false;
 	if(filters.sector && (data.sector != filters.sector))
 		return false;
