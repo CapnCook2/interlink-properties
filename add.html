@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add | Interlink Properties</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+</head>
+<body>
+<div class="alert alert-success notif" id="success-notif">Successfully Added!</div>
+<div class="alert alert-danger notif" id="error-notif">Failed to Send Data.</div>
+<div class="alert alert-info notif" id="sending-notif">Sending Data...</div>
+<div class="alert alert-info notif" id="receiving-notif">Receiving Data...</div>
+
+ <!-- Static navbar -->
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">Interlink Properties</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="index.html">Rent</a></li>
+              <li><a href="sale.html">Sale</a></li>
+              <li class="active"><a>Add</a></li>
+              <li><a href="settings.html">Settings</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
+<div class="container">
+<ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#rent">Rent</a></li>
+  <li><a data-toggle="tab" href="#sale">Sale</a></li>
+</ul>
+
+<div class="tab-content">
+	  <div id="rent" class="tab-pane fade in active"><br>
+	<form id="add-form">
+		<div class="form-group">
+		<label>Name</label>
+		<input class="form-control field" type="text" name="name" style="text-transform: capitalize">
+		</div>
+		
+		
+		<div class="form-group">
+			<label>BHK</label>
+			<select name="bhk" class="form-control field">
+				<option value="">--</option>
+				<option>1Room</option>
+				<option>1BHK</option>
+				<option selected>2BHK</option>
+				<option>3BHK</option>
+				<option>4BHK</option>
+			</select>
+		</div>
+		
+		
+		<div class="form-group">
+			<label>Phone Number</label>
+			<input class="form-control field" type="text" id="phone" name="phone">
+		</div>
+		
+		<div class="form-group">
+			<label>Rent</label>
+			<input class="form-control field" type="number" name="rent">
+		</div>
+		
+		<div class="form-group">
+			<label>Address</label>
+			<input class="form-control field" type="text" name="address">
+		</div>
+		<div class="form-group">
+			<label>Sector</label>
+			<input class="form-control field" type="text" name="sector">
+		</div>
+
+		<div class="col-sm-8">
+			<div class="form-group">
+				<label>Area</label>
+				<input class="form-control field" type="text" name="area">
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="form-group">
+				<label>&nbsp;</label>
+				<select class="form-control field" name="unit">
+				<option>sq.ft.</option>
+				<option>sq.yd.</option>
+			</select>
+			</div>
+		</div>
+		
+		<div class="form-group">
+		<label>Available for</label>
+		<div class="checkbox">
+			<label><input type="checkbox" name="bachelors">Bachelors</label><br>
+		</div>
+		<div class="checkbox">
+			<label><input type="checkbox" name="job" checked>Job</label><br>
+		</div>
+		<div class="checkbox">
+			<label><input type="checkbox" name="business" checked>Business</label>
+		</div>
+		<div class="checkbox">
+			<label><input type="checkbox" name="family">Family</label>
+		</div>
+		</div>
+		
+		<div class="form-group">
+			<label>Type</label>
+			<select class="form-control field" name="type">
+				<option>Flat</option>
+				<option>Floor with Owner</option>
+				<option>Independent Floor</option>
+				<option>Separate House</option>
+				<option>Shop</option>
+				<option>Office</option>
+				<option>Furnished Office</option>
+			</select>
+			<div class="checkbox">
+				<label><input type="checkbox" name="new">Newly Built</label>
+			</div>
+		</div>
+		
+		
+		<div class="form-group">
+			<label>Woodwork</label>
+			<div class="checkbox">
+				<label><input type="checkbox" name="rooms">Rooms</label><br>
+			</div>
+			<div class="checkbox">
+				<label><input type="checkbox" name="kitchen">Kitchen</label>
+			</div>
+		</div>
+
+		<button type="submit" class="btn btn-default">Submit</button><br><br>
+	</form>
+	</div>
+
+
+	<!-- sale form  -->
+  <div id="sale" class="tab-pane fade"><br>
+  <form id="sale-form">
+		<div class="form-group">
+		<label>Name</label>
+		<input class="form-control field" type="text" name="name" style="text-transform: capitalize">
+		</div>
+		
+		
+		<div class="form-group">
+			<label>BHK</label>
+			<select name="bhk" class="form-control field">
+				<option value ="">--</option>
+				<option>1BHK</option>
+				<option selected>2BHK</option>
+				<option>3BHK</option>
+				<option>4BHK</option>
+				<option>5BHK</option>
+			</select>
+		</div>
+		
+		
+		<div class="form-group">
+			<label>Phone Number</label>
+			<input class="form-control field" type="text" name="phone">
+		</div>
+		
+		<div class="form-group">
+			<label>Seller's Demand Price</label>
+			<input class="form-control field" type="number" name="demand">
+		</div>
+		
+		<div class="form-group">
+			<label>Tentative Price told to Buyer</label>
+			<input class="form-control field" type="number" name="offer">
+		</div>
+		
+		<div class="form-group">
+			<label>Dealer</label>
+			<input class="form-control field" type="text" name="dealer">
+		</div>
+
+		<div class="form-group">
+			<label>Address</label>
+			<input class="form-control field" type="text" name="address">
+		</div>
+
+		<div class="form-group">
+			<label>Sector</label>
+			<input class="form-control field" type="text" name="sector">
+		</div>
+
+		<div class="col-sm-8">
+			<div class="form-group">
+				<label>Area</label>
+				<input class="form-control field" type="text" name="area">
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="form-group">
+				<label>&nbsp;</label>
+				<select class="form-control field" name="unit">
+				<option>sq.ft.</option>
+				<option>sq.yd.</option>
+			</select>
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<label>Type</label>
+			<select class="form-control field" name="type">
+				<option>Flat</option>
+				<option>Floor</option>
+				<option>Plot</option>
+				<option>25% builtup</option>
+				<option>House</option>
+				<option>Villa</option>
+				<option>Duplex</option>
+			</select>
+
+			<div class="checkbox">
+				<label><input type="checkbox" name="new">Newly Built</label>
+			</div>
+		</div>
+		
+		
+		<div class="form-group">
+			<label>Facing</label>
+			<select class="form-control field" name="facing">
+				<option value="">Unknown</option>
+				<option>North</option>
+				<option>East</option>
+				<option>South</option>
+				<option>West</option>
+			</select>
+		</div>
+
+		<div class="form-group">
+			<div class="checkbox">
+				<label><input type="checkbox" name="corner">Corner</label><br>
+			</div>
+		</div>
+
+		<button type="submit" class="btn btn-default">Submit</button><br><br>
+	</form>
+  </div>
+  <div id="menu2" class="tab-pane fade">
+    <h3>Menu 2</h3>
+    <p>Some content in menu 2.</p>
+  </div>
+</div>
+</div>
+
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="bootstrap.min.js"></script>
+<script type="text/javascript" src="script-add.js"></script>
+</body>
+</html>

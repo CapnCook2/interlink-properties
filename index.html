@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Interlink Properties</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+</head>
+<body id="0">
+<a href="#0" id="toTop" class="btn btn-default">^</a>
+
+<!-- Static navbar -->
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">Interlink Properties</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a>Rent</a></li>
+          <li><a href="sale.html">Sale</a></li>
+          <li><a href="add.html" target="_blank">Add</a></li>
+          <li><a href="settings.html">Settings</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div><!--/.container-fluid -->
+  </nav>
+<div class="container">
+	<div class="col-sm-4">
+	<div class="form-group">
+	<form id="filterForm">
+	<span style="font-size:1.5em">Filters</span>
+	<div class="btn btn-default pull-right"onclick="filterclr()">Clear</div><br>
+	<label>Name</label>
+	<input class="form-control filter" type="text" id="name" name="name">
+	</div>
+	
+	
+	<div class="form-group">
+		<label>BHK</label>
+		<select name="bhk" class="form-control filter">
+			<option>Any</option>
+			<option>1Room</option>
+			<option>1BHK</option>
+			<option>2BHK</option>
+			<option>3BHK</option>
+			<option>4BHK</option>
+		</select>
+	</div>
+	
+	<div class="form-group">
+		<label>Rent</label><br>
+			<input class="form-control filter" style="width:49%;display:inline" type="number" name="minRent" placeholder="Min">
+			<input class="form-control filter" style="width:49%;display:inline" type="number" name="maxRent" placeholder="Max">
+	</div>
+	
+	<div class="form-group">
+		<label>Area (+100 sq.yd.)</label>
+		<input class="form-control filter" type="text" name="area">
+	</div>
+
+	<div class="form-group">
+		<label>Address</label>
+		<input class="form-control filter" type="text" name="address" >
+	</div>
+	<div class="form-group">
+		<label>Sector</label>
+		<input class="form-control filter" type="text" name="sector">
+	</div>
+	<div class="form-group">
+	<label>Searching for</label>
+	<div class="checkbox">
+		<label><input type="checkbox" class="filter-check" name="bachelors" checked>Bachelors</label><br>
+	</div>
+	<div class="checkbox">
+		<label><input type="checkbox" class="filter-check"  name="job" checked>Job</label><br>
+	</div>
+	<div class="checkbox">
+		<label><input type="checkbox" class="filter-check"  name="business" checked>Business</label>
+	</div>
+	<div class="checkbox">
+		<label><input type="checkbox" class="filter-check"  name="family" checked>Family</label>
+	</div>
+	</div>
+	
+	<div class="form-group">
+		<label>Type</label>
+		<select class="form-control filter" name="type">
+			<option>Any</option>
+			<option>Flat</option>
+			<option>Floor with Owner</option>
+			<option>Independent Floor</option>
+			<option>Separate House</option>
+		</select>
+
+		<div class="checkbox">
+			<label><input type="checkbox" class="filter-check" name="new">Newly Built</label><br>
+		</div>
+	</div>
+	
+	
+	<div class="form-group">
+		<label>Woodwork</label>
+		<div class="checkbox">
+			<label><input type="checkbox" class="filter-check"  name="rooms">Rooms</label><br>
+		</div>
+		<div class="checkbox">
+			<label><input type="checkbox" class="filter-check"  name="kitchen">Kitchen</label>
+		</div>
+	</div>
+	</form>
+	</div>
+	<div class="col-sm-8">
+		<h3 style="display:inline">Rent </h3> <button class="btn btn-default pull-right" id="reload" onclick="reload()"></button>
+		<div id="entries">
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="bootstrap.min.js"></script>
+<script type="text/javascript" src="script-rent.js"></script>
+</body>
+</html>
