@@ -72,7 +72,7 @@ function loadList(div) {
 				if(row.name!= "") box += "<div class='box-small'><img src='images/name.png'>&nbsp;<span data-id='name'>"+row.name+"</span> </div>";
 				if(row.bhk!= "") box += "<div class='box-small' data-id='bhk'>"+row.bhk+" </div>";
 				if(row.type!= "") box += "<div class='box-small' data-id='type'>"+row.type+" </div>";
-				if(row.area!= "") box += "<div class='box-small' data-id='type'>"+currency(row.area)+" "+row.unit +" </div>";
+				if(row.area!= "") box += "<div class='box-small' data-id='type'><img src='images/area.png'>&nbsp;"+currency(row.area)+" "+row.unit +" </div>";
 				if(row.phone!= "") box += "<div class='box-small' data-id='phone'><img src='images/phone.png'><a href='tel:"+row.phone+"'> "+row.phone+"</a></div>";
 				if(row.rent!= "") box += "<div class='box-small' data-id='rent'><img src='images/rupee.png'>&nbsp;"+currency(row.rent)+" </div>";
 				//console.log(row.bachelors+row.job+row.business);
