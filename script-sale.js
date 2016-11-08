@@ -47,9 +47,10 @@ function filter(data) {
 		return false;
 	if(filters.type && (filters.type != "Any" && data.type != filters.type))
 		return false;
+	if(filters.area && (isNaN(Number(filters.area)) || data.unit!="sq.yd." || Number(data.area)<Number(filters.area) || Number(data.area)>(Number(filters.area)+100)))
+		return false;
 	if(filters.address && data.address.toLowerCase().indexOf(filters.address.toLowerCase())<0)
 		return false;
-	if(filters.area && data.area)
 	if(filters.sector && (data.sector != filters.sector))
 		return false;
 	if(filters.facing && (filters.facing != "Any" && data.facing != filters.facing))

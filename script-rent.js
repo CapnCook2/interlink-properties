@@ -17,7 +17,7 @@ function filter(data) {
 		return false;
 	if(filters.maxRent && Number(filters.maxRent)<Number(data.rent))
 		return false;
-	if(filters.area && (data.unit!="sq.yd." || Number(data.area)<Number(filters.area) || Number(data.area)>(Number(filters.area)+100)))
+	if(filters.area && (isNaN(Number(filters.area)) || data.unit!="sq.yd." || Number(data.area)<Number(filters.area) || Number(data.area)>(Number(filters.area)+100)))
 		return false;
 	if(filters.bhk && (filters.bhk != "Any" && data.bhk != filters.bhk))
 		return false;
