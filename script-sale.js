@@ -67,7 +67,7 @@ var saledata = "{}";
 var pagePosition = 0;
 var d1 = $.Deferred();
 function getdata() {
-	$('#entries').html("<center><img src='spinner.gif'></center>");
+	$('.loader').fadeIn(200);
 	$.get('xhr.php?q=sale',function() {
 	})
 	.done(function(data) {
@@ -75,13 +75,16 @@ function getdata() {
 		saledata = data;
 		loadList("entries");
 		d1.resolve();
+		$('.loader').fadeOut(200);
 	})
 	.fail(function() {
+		$('.loader').fadeOut(200);
 		$('#entries').html("<center>Unable to retrieve data.</center>");
 	});
 }
 
 function loadList(div) {
+	try {
 	var box="";
 	var data = JSON.parse(saledata);
 	var displayed = 0;
@@ -113,6 +116,10 @@ function loadList(div) {
 	//console.log(box);
 	$('#'+div).html(box);
 	$('.delButton').on("click",del);
+	}
+	catch(e) {
+		$('#'+div).html(rentdata);
+	}
 }
 
 function reload() {

@@ -1,3 +1,15 @@
+html, body{
+  height:100%;
+}
+
+body {
+  padding-top: 70px;
+}
+
+.navbar {
+  margin-bottom: 0px;
+}
+
 #search {
 	width: 80%;
 	border: 1px solid gray;
@@ -88,4 +100,15 @@
 
 .grey {
   color: #ccc;
+}
+
+.loader {
+  padding-top: 50px; 
+  z-index: 3;
+  position: fixed;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+  background: #fff;
+  display: none;
 }

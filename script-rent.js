@@ -43,15 +43,17 @@ var pagePosition = 0;
 var d1 = $.Deferred();
 function getdata() {
 	pagePosition = $(window).scrollTop();
-	$('#entries').html("<center><img src='spinner.gif'></center>");
+	$('.loader').fadeIn(200);
 	$.get('xhr.php?q=rent',function() {
 	})
 	.done(function(data) {
 		rentdata = data;
 		loadList("entries");
 		d1.resolve();
+		$('.loader').fadeOut(200);
 	})
 	.fail(function() {
+		$('.loader').fadeOut(200);
 		$('#entries').html("<center>Unable to retrieve data.</center>");
 	});	
 }
@@ -59,6 +61,7 @@ function getdata() {
 function loadList(div) {
 	var box="";
 	//console.log("server sent: "+rentdata);
+	try {
 		var data = JSON.parse(rentdata);
 		var displayed = 0;
 		for(var i=data.length-1;i>=0;i--) {
@@ -97,6 +100,10 @@ function loadList(div) {
 		//console.log(box);
 		$('#'+div).html(box);
 		$('.delButton').on("click",del);
+	}
+	catch(e) {
+		$('#'+div).html(rentdata);
+	}
 }
 
 function reload() {
