@@ -43,17 +43,17 @@ var pagePosition = 0;
 var d1 = $.Deferred();
 function getdata() {
 	pagePosition = $(window).scrollTop();
-	$('.loader').fadeIn(200);
+	$('.loader').fadeIn(100);
 	$.get('xhr.php?q=rent',function() {
 	})
 	.done(function(data) {
 		rentdata = data;
 		loadList("entries");
 		d1.resolve();
-		$('.loader').fadeOut(200);
+		$('.loader').fadeOut(100);
 	})
 	.fail(function() {
-		$('.loader').fadeOut(200);
+		$('.loader').fadeOut(100);
 		$('#entries').html("<center>Unable to retrieve data.</center>");
 	});	
 }
