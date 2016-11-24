@@ -151,27 +151,35 @@ function filterclr() {
 }
 
 $(function(){
-
+	var filterTimer;
 	getdata();
 
 	$('.filter').on("keyup",function(){
-		if($(this).val()=="")
-			delete filters[$(this).attr('name')];
-		else
-			filters[$(this).attr('name')] = $(this).val();
-		loadList("entries");
+		var that = this;
+		clearTimeout(filterTimer);
+		filterTimer = setTimeout(function(){
+			if($(that).val()=="")
+				delete filters[$(that).attr('name')];
+			else
+				filters[$(that).attr('name')] = $(that).val();
+			loadList("entries");
+		},500);
 	});
 	$('.filter').on("change",function(){
-		if($(this).val()=="")
-			delete filters[$(this).attr('name')];
-		else
-			filters[$(this).attr('name')] = $(this).val();
-		loadList("entries");
+		var that = this;
+		clearTimeout(filterTimer);
+		filterTimer = setTimeout(function(){
+			if($(that).val()=="")
+				delete filters[$(that).attr('name')];
+			else
+				filters[$(that).attr('name')] = $(that).val();
+			loadList("entries");
+		},500);
 	});
 
 	$('.filter-check').on("click",function(){
-			filters[$(this).attr('name')] = $(this).prop('checked');
-			loadList("entries");
+		filters[$(this).attr('name')] = $(this).prop('checked');
+		loadList("entries");
 	});
 
 	$("#filterForm").submit( function(event) {
