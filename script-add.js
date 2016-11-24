@@ -2,6 +2,7 @@ $(function() {
 	var rentchecks = ["bachelors","job","business","family","new","rooms","kitchen"];
 	var salechecks = ["corner","new"];
 	if(getUrlParameter('rentid')){
+		$(".nav-tabs").hide();
 		var id = getUrlParameter('rentid');
 		$.get('xhr.php?q=rent-single&id='+id,function(){
 		})
@@ -23,6 +24,7 @@ $(function() {
 	if(getUrlParameter('saleid')){
 		//	//console.log("saleid");
 		$(".nav-tabs a[href='#sale']").tab('show');
+		$(".nav-tabs").hide();
 		var id = getUrlParameter('saleid');
 		$.get('xhr.php?q=sale-single&id='+id,function(){
 		})

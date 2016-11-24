@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Add | Interlink Properties</title>
+	<title>Settings | Interlink Properties</title>
 	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -32,11 +32,22 @@
         </div><!--/.container-fluid -->
       </nav>
 <div class="container">
-<button class="btn btn-default" onclick="download('interlink-backup.txt',localStorage.data)">Download Backup</button>
-<button class="btn btn-default" onclick="displayAll()">Display all Data</button>
-<button class="btn btn-danger" onclick="clr()">Clear everything</button><span id="size" class="pull-right" style="margin:10px"></span>
+<button class="btn btn-default" onclick="download()">Download Backup</button>
+<span id="size" style="margin:10px"></span>
 <hr>
-<div id="output"></div>
+<div id="output">
+  
+<ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#rent">Rent</a></li>
+  <li><a data-toggle="tab" href="#sale">Sale</a></li>
+</ul>
+
+<div class="tab-content">
+    <div id="rent" class="table-div tab-pane fade in active">
+    </div>
+    <div id="sale" class="table-div tab-pane fade in">
+    </div>
+</div>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="bootstrap.min.js"></script>
 <script type="text/javascript" src="script-settings.js"></script>

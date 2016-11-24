@@ -52,6 +52,12 @@ body {
   z-index: 2;
 }
 
+.table-div {
+  overflow: auto;
+  max-height: 570px;
+  font-size: 0.8em;
+}
+
 #toTop {
 	display: inline-block;
     height: 40px;
